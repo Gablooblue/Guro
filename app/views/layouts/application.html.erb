@@ -9,6 +9,32 @@
   </head>
 
   <body>
+	<nav id="myToolbar" class = 'navbar navbar-default navbar-fixed-top'>
+	    <div class="container">
+		<div class = "navbar-header">
+		    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		    </button>
+		    <%= link_to "Guro", root_path, class: "navbar-brand" %>
+		</div>
+		<div class= "collapse navbar-collapse"  id="navbar">
+		    <ul class = "nav navbar-nav">
+			<li>
+			    <%= link_to "Schools", schools_path %>
+			</li>
+			<li>
+			    <%= link_to "Classes", subjects_path %>
+			</li>
+			<li>
+			    <%= link_to "Teachers", teachers_path %>
+			</li>
+		    </ul>
+		</div>
+	    </div>
+	</nav>
     <%= yield %>
   </body>
 </html>
