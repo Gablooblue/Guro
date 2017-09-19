@@ -1,7 +1,16 @@
 $color-orange-main: #FD8204;
-$color-grey-bg: #F6F6F6;
+$color-grey-dull: #F6F6F6;
 
 //Navbar
-$navbar-default-bg: #FFFFFFl
+$navbar-default-bg: #FFFFFF;
 $navbar-default-link-hover-color :$color-orange-main;
 $navbar-default-brand-color: $color-orange-main;
+
+//Brand
+$brand-primary: $color-orange-main;
+
+//Body
+$body-bg: $color-grey-dull;
+
+//Buttons
+$btn-primary-color: $color-orange-main;
