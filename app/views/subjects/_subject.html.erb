@@ -1,0 +1,5 @@
+<div class = "panel panel-default">
+    <h3><%= @subject.name %></h3>
+    <p><%= link_to @subject.school.name, school_path(@subject.school) %></p>
+    <p>Description: <%= @subject.desc %></p>
+</div>
