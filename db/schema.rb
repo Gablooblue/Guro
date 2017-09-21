@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920155952) do
+ActiveRecord::Schema.define(version: 20170921150218) do
 
   create_table "names", force: :cascade do |t|
     t.string   "first"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 20170920155952) do
   create_table "professors", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "professors_subjects", id: false, force: :cascade do |t|
+    t.integer "professor_id", null: false
+    t.integer "subject_id",   null: false
+    t.index ["professor_id", "subject_id"], name: "index_professors_subjects_on_professor_id_and_subject_id"
   end
 
   create_table "reviews", force: :cascade do |t|

@@ -3,13 +3,21 @@
 <div class = "container" id = "default-padding">
     <div class = "col-md-12">
 	<div class = "panel panel-default">
-	    <h1><%= @subject.school.name %></h1>
+	    <h1>Subjects</h1>
 	</div>
     </div>
 
-    <div class = "col-md-6">
-	<div class = "panel panel-default">
-	    <%= render @subjects %>
+    <% if @subjects.count > 0 %>
+	<div class = "col-md-6">
+	    <div class = "panel panel-default">
+		<%= render @subjects %>
+	    </div>
 	</div>
-    </div>
+    <% else %>
+	<div class = "col-md-12">
+	    <div class = "panel panel-default">
+		<p class = "text-center"><i>No professors here</i></p>
+	    </div>
+	</div>
+
 </div>

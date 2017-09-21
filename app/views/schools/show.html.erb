@@ -1,29 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @school.name %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @school.desc %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @school.phone %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @school.address %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @school.email %>
-</p>
-
-<%= link_to 'Edit', edit_school_path(@school) %> |
-<%= link_to 'Back', schools_path %>
+<div class = "container" id = "default-padding">
+    <div class = "panel panel-default">
+	<h2>@school.name</h2>
+	<div class = "panel-body">
+	    <p><i><%=@school.address %></i></p>
+	    <p><%= @school.desc %></p>
+	    <p><strong>Contact details:</strong></p>
+	    <p>Phone: <%= @school.phone %></p>
+	    <p>Email: <%= @school.email  %></p>
+	</div>
+    </div>
+</div>

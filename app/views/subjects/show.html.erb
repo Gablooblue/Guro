@@ -1,19 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @subject.name %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @subject.desc %>
-</p>
-
-<p>
-  <strong>School:</strong>
-  <%= @subject.school_id %>
-</p>
-
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
-<%= link_to 'Back', subjects_path %>
+<div class = "container" id = "default-padding">
+    <div class = "panel panel-default">
+	<div class = "panel-body">
+	    <h2><%= @subject.name %></h2> 
+	    <p><%= @subject.desc %></p>
+	</div>
+    </div>
+</div>
