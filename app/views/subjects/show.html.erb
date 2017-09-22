@@ -4,7 +4,22 @@
     <div class = "panel panel-default">
 	<div class = "panel-body">
 	    <h2><%= @subject.name %></h2> 
+	    <p><i><%= @subject.school %></i></p>
 	    <p><%= @subject.desc %></p>
 	</div>
     </div>
+    <h3 class = "text-center">Professors</h3>
+    <% if @professors.empty? %>
+	<h4 class = "text-center">No professors here</h4>
+    <% else %>
+	<% @professors.each do |professor|%>
+	    <div class = "col-md-6">
+		<div class = "panel panel-default">
+		    <div class = "panel-body">
+			<% link_to professor.name.last + ", " + professor.name.first, professor_path(professor) %> 
+		    </div>
+		</div>
+	    </div>
+	<% end %>
+    <% end %>
 </div>
