@@ -1,5 +1,7 @@
 <div class = "col-md-6">
     <div class = "panel panel-default">
-	<h4><% =@professor.name.last, @professor.name.first %></h4> 
+	<div class = "panel-body">
+	    <h4><%= link_to @professor.name.last, @professor.name.first, professor_path(@professor) %></h4> 
+	</div>
     </div>
 </div>
