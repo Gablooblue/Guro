@@ -13,7 +13,7 @@
 	<h4 class = "text-center">No professors here</h4>
     <% else %>
 	<% @professors.each do |professor|%>
-	    <%= render 'professors/professor', @professor: professor %>
+	    <%= render 'professors/professor', professor: professor %>
 	<% end %>
     <% end %>
 </div>
