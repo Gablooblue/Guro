@@ -1,12 +1,8 @@
 <p id="notice"><%= notice %></p>
-<div class 'container' id = "default-padding">
-    <div class = "col-md-12">
-	<div class = "panel panel-default">
-	    <div class = "panel-body"> 
-		<h1 class = "text-center">Professors</h1>
-	    </div>
-	</div>
-    </div>
+<header id = "default-padding">
+    <h1 class = "text-center">Professors</h1>
+</header>
+<div class = "container" id = "default-padding">
 
     <% if @professors.count > 0 %>
 	<%= render @professors %>
@@ -14,7 +10,7 @@
 	<div class = "col-md-12">
 	    <div class = "panel panel-default">
 		<div class = "panel-body">
-		    <h3 class = "text-center"><i>No professors here</i></h3>
+		    <h4 class = "text-center"><i>No professors here</i></h3>
 		</div>
 	    </div>
 	</div>
