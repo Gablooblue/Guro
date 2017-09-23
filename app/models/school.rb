@@ -1,4 +1,4 @@
 class School < ApplicationRecord
     has_many :subjects
-    has_many :profesors, through: :subjects
+    has_many :professors, through: :subjects
 end
