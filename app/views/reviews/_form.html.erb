@@ -11,22 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :score %>
-    <%= f.number_field :score %>
+  <div class="form-group">
+    <%= f.label :score , class: "control-label"%>
+    <%= f.number_field :score , class: "form-control"%>
   </div>
 
-  <div class="field">
-    <%= f.label :professor_id %>
-    <%= f.number_field :professor_id %>
+  <div class="form-group">
+    <%= f.label :desc , class: "control-label"%>
+    <%= f.text_area :desc , class: "form-control"%>
   </div>
 
-  <div class="field">
-    <%= f.label :desc %>
-    <%= f.text_area :desc %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit, class:'btn btn-primary' %>
   </div>
 <% end %>
