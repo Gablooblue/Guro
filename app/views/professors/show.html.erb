@@ -1,10 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <div class = "container" id = "default-padding">
-    <div class = "panel panel-default">
-	<div class = "panel-body">
-	    <h2><%= @professor.name.last + ", " + @professor.name.first %></h2>
-	    <p>Rating: <%= @professor.overall_rating%></p>
+    <div class = "col-md-12">
+	<div class = "panel panel-default">
+	    <div class = "panel-body">
+		<h2><%= @professor.name.last + ", " + @professor.name.first %></h2>
+		<p>Rating: <%= @professor.overall_rating%></p>
+	    </div>
 	</div>
     </div>
+    <div class = "col-md-12">
+	<h3 class = "text-center">Subjects</h3>
+    </div>
+    <% @professor.subjects.each do |subject| %> 
+	<div class = "col-md-12">
+	    <div class = "panel panel-default">
+		<div class = "panel-body">
+			<h4><%= link_to subject.name, subject_path(subject) %></h4>
+			<p>School: <%= link_to subject.school.name, school_path(subject.school) %></p>
+			<p>Rating of professor: </p>
+		</div>
+	    </div>
+	</div>
+    <% end %>
 </div>
