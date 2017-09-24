@@ -41,6 +41,7 @@
 				<div class = "pull-right">
 				    <%= link_to "Edit", edit_subject_path(subject) %>
 				    <%= link_to "Delete", subject_path(subject), method: :delete, data: {confirm: "Delete permanently?"} %>
+				    <%= link_to "Add professor", subject_add(subject) %>
 				</div>
 			    </li>
 			<% end %>
@@ -66,6 +67,7 @@
 				<div class = "pull-right">
 				    <%= link_to "Edit", edit_professor_path(professor) %>
 				    <%= link_to "Delete", professor_path(professor), method: :delete, data: {confirm: "Delete permanently?"} %>
+				    <%= link_to "Add class", professor_add(professor) %>
 				</div>
 			    </li>
 			<% end %>

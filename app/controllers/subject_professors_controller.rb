@@ -1,11 +1,15 @@
 class SubjectProfessorsController < ApplicationController
 
+    def new
+
+    end
     #Creating a subject-professor relationship
     def create
-	@subject = Subject.find(params[:id])
+	@subject = Subject.find(params[:subject])
 	@professor = Professor.find(params[:professor])
 
-	@subject << @professor
+	@subject.professors << @professor
+	@professor.subjects << @subject
     end
 
     #Destroying a subject-professor relationship

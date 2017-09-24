@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
     devise_for :users
     resources :professors do
+	get :add
 	post :add_subject
     end
 
     resources :subjects do
+	get :add
 	post :add_professor
 	resources :professors do 
 	    resources :reviews
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
     end
 
     resources :schools
+
 
     resources :admin, only: :index
 
