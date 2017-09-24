@@ -63,6 +63,12 @@ class SubjectsController < ApplicationController
 	end
     end
 
+    def add_professor
+	@professor = Professor.find(params[:professor_id])
+
+	@subject << @professor
+    end
+
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_subject
