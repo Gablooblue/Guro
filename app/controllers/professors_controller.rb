@@ -1,5 +1,5 @@
 class ProfessorsController < ApplicationController
-    before_action :set_professor, only: [:show, :edit, :update, :destroy]
+    before_action :set_professor, only: [:show, :edit, :update, :destroy, :add_subject]
     before_action :authenticate_user!, only: [:new, :edit, :create, :destroy, :update]
 
     # GET /professors

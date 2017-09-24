@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
     devise_for :users
-    resources :professors 
+    resources :professors do
+	post :add_subject
+    end
 
     resources :subjects do
+	post :add_professor
 	resources :professors do 
 	    resources :reviews
 	end
