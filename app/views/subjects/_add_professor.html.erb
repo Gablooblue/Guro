@@ -1,0 +1,14 @@
+<%= form_for (subject_add_professor_path, method: :post) do |f| %>
+    <div class = "form-group">
+	<%= f.label :professor_id, class: "control-label" %>
+	<%= f.number_field :professor_id, class: "form-control" %>
+    </div>
+
+    <%= f.hidden_field :subject_id %>
+    
+    <div class = "form-group">
+	<%= f.submit "Add professor", class: "btn btn-primary" %>
+    </div>
+<% end %>
+    
+
