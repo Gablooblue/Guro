@@ -1,7 +1,7 @@
 <%= form_for @professor, url: professor_add_subject_path, html: {method: :post} do |f| %>
 
     <div class = "form-group">
-	<%= f.label :subject_id "Class", class: "control-label" %>
+	<%= f.label :subject_id , class: "control-label" %>
 	<%= f.collection_select :subject_id, Subject.all, :id, :name, {}, {class: "form-control"} %>
     </div>
 

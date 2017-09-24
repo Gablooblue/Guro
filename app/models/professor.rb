@@ -5,9 +5,9 @@ class Professor < ApplicationRecord
 
     attr_accessor :subject_id
 
-    def average_rating
+    def average_rating(subject_id)
 	if(self.reviews.any?)
-	    self.reviews.average(:score).where(subject: self.subject)
+	    self.reviews.where(subject: subject_id).average(:score)
 	else
 	    return 5.00
 	end
