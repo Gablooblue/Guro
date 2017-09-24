@@ -3,8 +3,8 @@
 <div class = "container" id = "default-padding">
     <div class = "panel panel-default">
 	<div class = "panel-body">
-	    <h3><%= @review.subject.name %></h3>
-	    <p><i><%= @review.professor.last_name + ", " @review.professor.first_name %></i></p>
+	    <h3><%= link_to @review.subject.name, subject_path(@review.subject) %></h3>
+	    <h4><%= link_to @review.professor.last_name + ", " + @review.professor.first_name, professor_path(@review.professor) %></h4>
 	    <p><%= @review.desc %></p>
 	</div>
 
