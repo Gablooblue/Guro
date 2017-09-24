@@ -4,7 +4,7 @@
     <div class = "panel panel-default">
 	<div class = "panel-body">
 	    <h2><%= @subject.name %></h2> 
-	    <p><i><%= @subject.school %></i></p>
+	    <p><strong>School: </strong><%= link_to @subject.school.name, school_path(@subject.school) %></i></p>
 	    <p><%= @subject.desc %></p>
 	</div>
     </div>
