@@ -1,27 +1,34 @@
-<%= form_for(review) do |f| %>
-  <% if review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+<%= form_for @review, url: professor_reviews_path, html: {method: :post} do |f| %>
+    <% if review.errors.any? %>
+	<div id="error_explanation">
+	    <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
-      <ul>
-      <% review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+	    <ul>
+		<% review.errors.full_messages.each do |message| %>
+		    <li><%= message %></li>
+		<% end %>
+	    </ul>
+	</div>
+    <% end %>
+
+    <div class = "form-group">
+	<%= f.label :subject_id, class: "control-label" %>
+	<%= f.collection_select :subject_id, Subject.all, :id, :name, {}, {class: "form-control"} %>
     </div>
-  <% end %>
 
-  <div class="form-group">
-    <%= f.label :score , class: "control-label"%>
-    <%= f.select :score, [1,2,3,4,5], class: "form-control"%>
-  </div>
+    <div class="form-group">
+	<%= f.label :score , class: "control-label"%>
+	<%= f.select :score, [1,2,3,4,5], class: "form-control"%>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :desc , class: "control-label"%>
-    <%= f.text_area :desc , class: "form-control"%>
-  </div>
+    <div class="form-group">
+	<%= f.label :desc , class: "control-label"%>
+	<%= f.text_area :desc , class: "form-control"%>
+    </div>
 
-  <div class="form-group">
-    <%= f.submit "Submit", class:'btn btn-primary' %>
-  </div>
+    <%= f.hidden_field :professor_id, value: params[:professor_id] %>
+
+    <div class="form-group">
+	<%= f.submit "Submit", class:'btn btn-primary' %>
+    </div>
 <% end %>

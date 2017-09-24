@@ -1,5 +1,7 @@
-<h1 class = "text-center">New Review</h1>
+<header id = "default-padding">
+    <h1 class = "text-center">New Review</h1>
+</header>
+<div class = "container">
+    <%= render 'form', review: @review %>
+</div>
 
-<%= render 'form', review: @review %>
-
-<%= link_to 'Back', reviews_path %>
