@@ -3,6 +3,8 @@ class Professor < ApplicationRecord
     has_many :schools, through: :subject
     has_many :reviews, dependent: :destroy
 
+    attr_accessor :subject_id
+
     def average_rating
 	if(self.reviews.any?)
 	    self.reviews.average(:score).where(subject: self.subject)

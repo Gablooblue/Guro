@@ -64,11 +64,24 @@ class ProfessorsController < ApplicationController
     end
 
     def add_subject
-	@professor = Professor.find(params[:professor])
-	@subject = Subject.find(params[:subject])
+	@professor = Professor.find(params[:professor_id])
+	@subject = Subject.find(params[:professor][:subject_id])
 
-	@subject.professors << @professor
-	@professor.subjects << @subject
+	respond_to do |format|
+	    if @professor.subjects << @subject
+
+		format.html { redirect_to @subject, notice: 'Professor was successfully added.' }
+		format.json { render :show, status: :created, location: @subject}
+	    else
+		format.html { render :new }
+		format.json { render json: @subject.errors, status: :unprocessable_entity }
+	    end
+	end
+
+    end
+
+    def add
+	@professor = Professor.find(params[:professor_id])
     end
 
     private
@@ -79,6 +92,6 @@ class ProfessorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def professor_params
-	params.require(:professor).permit(:first_name, :last_name)
+	params.require(:professor).permit(:first_name, :last_name, :subject_id)
     end
 end

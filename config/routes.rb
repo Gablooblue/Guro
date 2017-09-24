@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
     resources :schools
 
+    resources :subject_professors, only: [:new, :create, :destroy]
+
 
     resources :admin, only: :index
 

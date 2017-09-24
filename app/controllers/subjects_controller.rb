@@ -1,5 +1,5 @@
 class SubjectsController < ApplicationController
-    before_action :set_subject, only: [:show, :edit, :update, :destroy]
+    before_action :set_subject, only: [:show, :edit, :update, :destroy ]
     before_action :authenticate_user!, only: [:new, :edit, :create, :destroy, :update]
 
     # GET /subjects
@@ -64,10 +64,15 @@ class SubjectsController < ApplicationController
     end
 
     def add_professor
-	@professor = Professor.find(params[:professor])
+	@subject = Subject.find(params[:subject_id])
+	@professor = Professor.find(params[:professor_id])
 
 	@subject.professors << @professor
 	@professor.subjects << @subject
+    end
+
+    def add
+	@subject = Subject.find(params[:subject_id])
     end
 
     private
