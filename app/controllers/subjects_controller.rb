@@ -65,14 +65,24 @@ class SubjectsController < ApplicationController
 
     def add_professor
 	@subject = Subject.find(params[:subject_id])
-	@professor = Professor.find(params[:professor_id])
+	@professor = Professor.find(params[:subject][:professor_id])
 
-	@subject.professors << @professor
-	@professor.subjects << @subject
+	
+	respond_to do |format|
+	    if @subject.professors << @professor 
+
+		format.html { redirect_to @subject, notice: 'Professor was successfully added.' }
+		format.json { render :show, status: :created, location: @subject}
+	    else
+		format.html { render :new }
+		format.json { render json: @subject.errors, status: :unprocessable_entity }
+	    end
+	end
     end
 
     def add
 	@subject = Subject.find(params[:subject_id])
+	@professors = Professor.all
     end
 
     private

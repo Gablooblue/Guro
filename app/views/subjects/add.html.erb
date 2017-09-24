@@ -1,7 +1,7 @@
 <header id = "default-padding">
-    <h1>Add professor to class</h1>
+    <h1 class = "text-center">Add professor to <%= @subject.name %></h1>
 </header>
 
 <div class = "container">
-    <%= render "add_professor", subject: subject %>
+    <%= render "add_professor", subject: @subject %>
 </div>

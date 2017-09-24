@@ -1,11 +1,9 @@
-<%= form_for (subject_add_professor_path) do |f| %>
+<%= form_for @subject, url: subject_add_professor_path, html: {method: :post} do |f| %>
     <div class = "form-group">
 	<%= f.label :professor_id, class: "control-label" %>
-	<%= f.number_field :professor_id, class: "form-control" %>
+	<%= f.collection_select :professor_id, Professor.all, :id, :last_name, {}, {class: "form-control"} %>
     </div>
 
-    <%= f.hidden_field :subject_id %>
-    
     <div class = "form-group">
 	<%= f.submit "Add professor", class: "btn btn-primary" %>
     </div>

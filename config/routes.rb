@@ -3,14 +3,13 @@ Rails.application.routes.draw do
     resources :professors do
 	get :add
 	post :add_subject
+	resources :reviews
     end
 
     resources :subjects do
 	get :add
 	post :add_professor
-	resources :professors do 
-	    resources :reviews
-	end
+	resources :professors
     end
 
     resources :schools
