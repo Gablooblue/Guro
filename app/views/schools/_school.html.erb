@@ -1,11 +1,11 @@
 <div class = "col-md-12">
     <div class = "panel panel-default">
-	<h4><%= school.name %></h4>
 	<div class = "panel-body">
-	    <p><%= school.address %> </p>
+	    <h4><%= link_to school.name, school_path(school) %></h4>
 	    <p><%= school.desc %></p>
-	    <p>Contact: <%= school.phone %> </p>
-	    <p> <%= school.email %></p>
+	    <p><strong>Address:</strong> <%= school.address %> </p>
+	    <p><strong>Contact Number:</strong> <%= school.phone %> </p>
+	    <p><strong>Email:</strong> <%= school.email %></p>
 	</div>
     </div>
 </div>

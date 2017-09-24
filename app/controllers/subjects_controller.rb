@@ -64,9 +64,10 @@ class SubjectsController < ApplicationController
     end
 
     def add_professor
-	@professor = Professor.find(params[:professor_id])
+	@professor = Professor.find(params[:professor])
 
-	@subject << @professor
+	@subject.professors << @professor
+	@professor.subjects << @subject
     end
 
     private

@@ -1,5 +1,7 @@
 <div class = "panel panel-default">
-    <h3><%= subject.name %></h3>
-    <p><%= link_to subject.school.name, school_path(subject.school) %></p>
-    <p>Description: <%= subject.desc %></p>
+    <div class = "panel-body">
+	<h3><%= link_to subject.name, subject_path(subject) %></h3>
+	<p><strong>School: </strong><%= link_to subject.school.name, school_path(subject.school) %></p>
+	<p><%= subject.desc %></p>
+    </div>
 </div>

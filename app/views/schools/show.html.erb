@@ -2,8 +2,8 @@
 
 <div class = "container" id = "default-padding">
     <div class = "panel panel-default">
-	<h2>@school.name</h2>
 	<div class = "panel-body">
+	    <h2><%= @school.name %></h2>
 	    <p><i><%=@school.address %></i></p>
 	    <p><%= @school.desc %></p>
 	    <p><strong>Contact details:</strong></p>
@@ -13,7 +13,11 @@
     </div>
 
     <h3 class = "text-center">Classes</h3>  
-    <%= @school.subjects.each do |subject| %>
-	<%= render "subjects/subject", subject: subject %>
+    <% if @school.subjects.empty? %>
+	<h4 class = "text-center">School has no classes yet</h4>
+    <% else %>
+	<%= @school.subjects.each do |subject| %>
+	    <%= render "subjects/subject", subject: subject %>
+	<% end %>
     <% end %>
 </div>
