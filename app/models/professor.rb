@@ -1,13 +1,21 @@
 class Professor < ApplicationRecord
     has_and_belongs_to_many :subjects
     has_many :schools, through: :subject
-    has_many :reviews
+    has_many :reviews, dependent: :destroy
 
     def average_rating
-	self.reviews.average(:score).where(subject: self.subject)
+	if(self.reviews.any?)
+	    self.reviews.average(:score).where(subject: self.subject)
+	else
+	    return 5.00
+	end
     end
 
     def overall_rating
-	self.reviews.average(:score)
+	if(self.reviews.any?)
+	    self.reviews.average(:score)
+	else
+	    return 5.00 
+	end
     end
 end

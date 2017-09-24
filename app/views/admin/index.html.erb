@@ -31,7 +31,7 @@
 		    <p class = "text-center"><i>No subjects here</i></p>
 		<% else %>
 		    <div class = "list-group">
-			<% @subjects.each do |subjects| %>
+			<% @subjects.each do |subject| %>
 			    <%= link_to subject.name, subject_path(subject), class: "list-group-item" %>
 			    <%= link_to "Edit", edit_subject_path(subject) %>
 			    <%= link_to "Delete", subject_path(subject), method: :delete, data: {confirm: "Delete permanently?"} %>

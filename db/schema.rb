@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20170921150218) do
   end
 
   create_table "professors", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,11 +36,11 @@ ActiveRecord::Schema.define(version: 20170921150218) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "score"
-    t.integer  "teacher_id"
+    t.integer  "professor_id"
     t.integer  "subject_id"
     t.text     "desc"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "schools", force: :cascade do |t|
