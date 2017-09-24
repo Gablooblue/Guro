@@ -9,13 +9,17 @@
 		<% if @schools.empty? %>
 		    <p class = "text-center"><i>No schools here</i></p>
 		<% else %>
-		    <div class = "list-group">
+		    <ul class = "list-group">
 			<% @schools.each do |school| %>
-			    <%= link_to school.name, school_path(school), class: "list-group-item" %>
-			    <%= link_to "Edit", edit_school_path(school) %>
-			    <%= link_to "Delete", school_path(school), method: :delete, data: {confirm: "Delete permanently?"} %>
+			    <li class = "list-group-item">
+				<%= link_to school.name, school_path(school) %>
+				<div class = "pull-right">
+				    <%= link_to "Edit", edit_school_path(school) %>
+				    <%= link_to "Delete", school_path(school), method: :delete, data: {confirm: "Delete permanently?"} %>
+				</div>
+			    </li>
 			<% end %>
-		    </div>
+		    </ul>
 		<% end %>
 	    </div>
 	</div>
@@ -30,13 +34,17 @@
 		<% if @subjects.empty? %>
 		    <p class = "text-center"><i>No subjects here</i></p>
 		<% else %>
-		    <div class = "list-group">
+		    <ul class = "list-group">
 			<% @subjects.each do |subject| %>
-			    <%= link_to subject.name, subject_path(subject), class: "list-group-item" %>
-			    <%= link_to "Edit", edit_subject_path(subject) %>
-			    <%= link_to "Delete", subject_path(subject), method: :delete, data: {confirm: "Delete permanently?"} %>
+			    <li class = "list-group-item">
+				<%= link_to subject.name, subject_path(subject) %>
+				<div class = "pull-right">
+				    <%= link_to "Edit", edit_subject_path(subject) %>
+				    <%= link_to "Delete", subject_path(subject), method: :delete, data: {confirm: "Delete permanently?"} %>
+				</div>
+			    </li>
 			<% end %>
-		    </div>
+		    </ul>
 		<% end %>
 	    </div>
 	</div>
@@ -51,13 +59,17 @@
 		<% if @professors.empty? %>
 		    <p class = "text-center"><i>No professors here</i></p>
 		<% else %>
-		    <div class = "list-group">
+		    <ul class = "list-group">
 			<% @professors.each do |professor| %>
-			    <%= link_to professor.name, professor_path(professor), class: "list-group-item" %>
-			    <%= link_to "Edit", edit_professor_path(professor) %>
-			    <%= link_to "Delete", professor_path(professor), method: :delete, data: {confirm: "Delete permanently?"} %>
+			    <li class = "list-group-item">
+				<%= link_to professor.last_name + ", " + professor.first_name, professor_path(professor)%>
+				<div class = "pull-right">
+				    <%= link_to "Edit", edit_professor_path(professor) %>
+				    <%= link_to "Delete", professor_path(professor), method: :delete, data: {confirm: "Delete permanently?"} %>
+				</div>
+			    </li>
 			<% end %>
-		    </div>
+		    </ul>
 		<% end %>
 	    </div>
 	</div>
