@@ -10,22 +10,36 @@
 	    </div>
 	</div>
     </div>
-    <div class = "col-md-12">
+    <div class = "col-md-6">
 	<h3 class = "text-center">Classes</h3>
-    </div>
-    <% if @professor.subjects.blank? %>
-	<h4 class = "text-center">No classes here</h4>
-    <% else %>
-	<% @professor.subjects.each do |subject| %> 
-	    <div class = "col-md-12">
-		<div class = "panel panel-default">
-		    <div class = "panel-body">
-			    <h4><%= link_to subject.name, subject_path(subject) %></h4>
-			    <p>School: <%= link_to subject.school.name, school_path(subject.school) %></p>
-			    <p>Rating of professor: <%= @professor.average_rating(subject.id) %>/5.0 </p>
+	<% if @professor.subjects.blank? %>
+	    <h4 class = "text-center">No classes here</h4>
+	<% else %>
+	    <% @professor.subjects.each do |subject| %> 
+		<div class = "col-md-6">
+		    <div class = "panel panel-default">
+			<div class = "panel-body">
+				<h4><%= link_to subject.name, subject_path(subject) %></h4>
+				<p>School: <%= link_to subject.school.name, school_path(subject.school) %></p>
+				<p>Rating of professor: <%= @professor.average_rating(subject.id) %>/5.0 </p>
+			</div>
 		    </div>
 		</div>
-	    </div>
+	    <% end %>
 	<% end %>
-    <% end %>
+    </div>
+
+    <div class = "col-md-6">
+	<h3 class = "text-center">Recent reviews</h3>
+	<% if @professor.reviews.blank? %>
+	    <h4 class = "text-center">No reviews here</h4>
+	<% else %>
+	    <h5 class = "text-center"><%= link_to "View all", professor_reviews_path(@professor) %></h5>
+	    <% @professor.reviews.take(6).each do |review| %>
+		<div class = "col-md-6">
+		    <%= render "reviews/review", review: review %>
+		</div>
+	    <% end %>
+	<% end %>
+    </div>
 </div>

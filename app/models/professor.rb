@@ -7,7 +7,7 @@ class Professor < ApplicationRecord
 
     def average_rating(subject_id)
 	if(self.reviews.any?)
-	    self.reviews.where(subject: subject_id).average(:score)
+	    self.reviews.where(subject: subject_id).average(:score).round(2)
 	else
 	    return 5.00
 	end
@@ -15,7 +15,7 @@ class Professor < ApplicationRecord
 
     def overall_rating
 	if(self.reviews.any?)
-	    self.reviews.average(:score)
+	    self.reviews.average(:score).round(2)
 	else
 	    return 5.00 
 	end
