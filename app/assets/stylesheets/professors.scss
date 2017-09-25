@@ -1,3 +1,11 @@
 // Place all the styles related to the teachers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+header
+{
+    width:100%;
+    background: url(asset-path("classroom.jpg")) no-repeat center;
+    background-size: cover;
+    padding-bottom:60px;
+    color: white;
+}
