@@ -15,7 +15,14 @@
 	<h4 class = "text-center">No professors here</h4>
     <% else %>
 	<% @professors.each do |professor|%>
-	    <%= render 'professors/professor', professor: professor %>
+		<div class = "col-md-6">
+		    <div class = "panel panel-default">
+			<div class = "panel-body">
+			    <h4><%= link_to professor.last_name + ", " + professor.first_name, professor_path(professor) %></h4> 
+			    <p><strong>Rating: </strong><%= professor.average_rating(@subject.id)%>/5.0</p>
+			</div>
+		    </div>
+		</div>
 	<% end %>
     <% end %>
 </div>
