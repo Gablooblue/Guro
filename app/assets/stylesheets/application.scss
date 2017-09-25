@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Poppins|Rubik');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Poppins|Rubik+Mono+One');
 @import "bootstrap/variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -6,4 +6,19 @@
 #default-padding
 {
     padding-top: 60px;
+}
+
+#myNavbar
+{
+    font-family: "Montserrat", sans-serif;
+}
+
+body
+{
+    font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5
+{
+    font-family: "Montserrat", sans-serif;
 }
