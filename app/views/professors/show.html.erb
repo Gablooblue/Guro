@@ -2,11 +2,13 @@
 
 <div class = "container" id = "default-padding">
     <div class = "col-md-12">
-	<div class = "panel panel-default">
-	    <div class = "panel-body">
-		<h2><%= @professor.last_name + ", " + @professor.first_name %></h2>
-		<p>Overall rating: <%= @professor.overall_rating %>/5.0</p>
-		<%= link_to "Write a review", new_professor_review_path(professor_id: @professor) %>
+	<div class = "col-md-12">
+	    <div class = "panel panel-default">
+		<div class = "panel-body">
+		    <h2><%= @professor.last_name + ", " + @professor.first_name %></h2>
+		    <p>Overall rating: <%= @professor.overall_rating %>/5.0</p>
+		    <%= link_to "Write a review", new_professor_review_path(professor_id: @professor) %>
+		</div>
 	    </div>
 	</div>
     </div>

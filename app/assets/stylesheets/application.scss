@@ -8,6 +8,11 @@
     padding-top: 60px;
 }
 
+#half-padding
+{
+    padding-top:30px;
+}
+
 #myNavbar
 {
     font-family: "Montserrat", sans-serif;
@@ -21,4 +26,13 @@ body
 h1, h2, h3, h4, h5
 {
     font-family: "Montserrat", sans-serif;
+}
+
+header
+{
+    text-shadow:
+    -1px -1px 0 $color-orange-main,  
+    1px -1px 0 $color-orange-main,
+    -1px 1px 0 $color-orange-main,
+    1px 1px 0 $color-orange-main;
 }
