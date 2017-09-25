@@ -1,3 +1,10 @@
 // Place all the styles related to the schools controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+header
+{
+    width:100%;
+    background: url(asset-path("schools.jpg")) no-repeat center;
+    padding-bottom:60px;
+    color: white;
+}

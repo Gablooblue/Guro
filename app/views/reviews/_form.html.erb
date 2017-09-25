@@ -12,18 +12,18 @@
     <% end %>
 
     <div class = "form-group">
-	<%= f.label :subject_id, class: "control-label" %>
+	<%= f.label :subject_id, "Pick a class", class: "control-label" %>
 	<%= f.collection_select :subject_id, Subject.all, :id, :name, {}, {class: "form-control"} %>
     </div>
 
     <div class="form-group">
-	<%= f.label :score , class: "control-label"%>
-	<%= f.select :score, [1,2,3,4,5], class: "form-control"%>
+	<%= f.label :score , "Rating (1 being the lowest 5 being the highest)", class: "control-label"%>
+	<%= f.select :score, [1,2,3,4,5],{}, {class: "form-control"}%>
     </div>
 
     <div class="form-group">
-	<%= f.label :desc , class: "control-label"%>
-	<%= f.text_area :desc , class: "form-control"%>
+	<%= f.label :desc, "Review", class: "control-label"%>
+	<%= f.text_area :desc , class: "form-control", placeholder: "Write a detailed review(Optional)"%>
     </div>
 
     <%= f.hidden_field :professor_id, value: params[:professor_id] %>

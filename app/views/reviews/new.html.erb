@@ -1,5 +1,6 @@
 <header id = "default-padding">
-    <h1 class = "text-center">New Review</h1>
+    <h1 class = "text-center">Write a review</h1>
+    <h4 class = "text-center"><%= @professor.last_name + ", " + @professor.first_name %></h4>
 </header>
 <div class = "container">
     <%= render 'form', review: @review %>

@@ -11,3 +11,4 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( splash.scss )
 Rails.application.config.assets.precompile += %w( subjects.css )
+Rails.application.config.assets.precompile += %w( schools.scss )
